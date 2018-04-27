@@ -1,0 +1,80 @@
+.dropzone {
+    color: #FFFFFF;
+    border-radius: 1px;
+    border: 1px dashed rgb(0, 135, 247);
+    border-image: none;
+    max-width: 100%;
+    margin-top: 100px;
+    height: 500px;
+    margin-left: 45px;
+    margin-right: 45px;
+    position: relative;
+    overflow: auto;
+}
+
+.active-dropzone {
+    border-style: solid;
+    color: #B3AEAE;
+}
+
+.reject-files {
+    border: 1px dashed #f7000f;
+    border-style: solid;
+}
+
+.container-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.upload-svg {
+    height: 80px;
+  }
+
+.upload-button {
+    height:30px;
+    width:10%;
+    min-width: 100px;
+    border-radius: 100px;
+    position: absolute;;
+    position: absolute;
+    top: 65%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    
+    display:flex;
+    justify-content:center;
+    align-items: center;  
+
+    border:2px solid #2590EB;
+    overflow:hidden;
+    background-image: linear-gradient(to bottom, rgba(37, 144, 235, 0.14) 50%, rgba(37, 144, 235, 0.50) 50%);
+    background-size: 100% 200%;
+    transition: all 1s;
+    color: #CCCCCC;
+    font-size:20px;
+}
+
+.upload-button.ready {
+    width: 20%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    transform: none;
+    top: 90%;
+    color: #FFFFFF;
+    
+    &:hover{
+        cursor: pointer;
+        background-position: 0 -100%;
+        color:#FFFFFF;
+    }
+}
+
+.upload-button.upload {
+    opacity: 0;
+    width: 0;
+}
