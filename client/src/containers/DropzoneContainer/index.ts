@@ -1,0 +1,1 @@
+export { default as default, OwnProps } from './DropzoneContainer';

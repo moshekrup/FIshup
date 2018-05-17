@@ -1,23 +1,14 @@
-import React from 'react';
-import './App.css';
-import Rain from './rainIndex.js';
+// export { Component } from 'react';
+import * as React from 'react';
 
 const river = require('./river.png');
-import DropzoneFiles from '../../containers/DropzoneFiles';
 
-class App extends React.Component {
-  componentDidMount()
-  {
-    Rain.init();
-  }
+import './Footer.css';
 
-  render() {
-    return (
-      <div className="App">
-        <span id="fishupTitle"></span>
-        <canvas id="canvas">Canvas is not supported in your browser</canvas>
-        <DropzoneFiles/>
-        <div className="footer">
+export default class Footer extends React.Component {
+    render(){
+        return (
+            <div className="footer">
             <svg id="fishmanLogo" viewBox="0 0 260 130.5">
                 <path className="sea1" d="M246.1,100.8c0,0-0.3-1-0.6-2.6c-0.1-0.8-0.3-1.8-0.3-2.8c0-1,0-2.1,0.1-3.2c0.1-0.6,0.1-1.1,0.2-1.7c0.1-0.5,0.2-1.1,0.4-1.6c0.2-0.5,0.4-1,0.7-1.4c0.3-0.4,0.5-0.8,0.8-1.1c0.3-0.3,0.6-0.6,0.8-0.9c0.3-0.2,0.5-0.4,0.7-0.5c0.4-0.3,0.7-0.4,0.7-0.4l0.1,0.1c0,0-0.1,0.3-0.3,0.7c-0.1,0.2-0.2,0.5-0.3,0.8c-0.1,0.3-0.2,0.6-0.4,1c-0.1,0.2-0.2,0.4-0.2,0.6c-0.1,0.2-0.1,0.4-0.2,0.6c-0.2,0.4-0.3,0.8-0.4,1.3c-0.2,0.4-0.3,0.9-0.5,1.4c-0.2,0.5-0.3,1-0.5,1.5c-0.2,1-0.4,2-0.5,3c-0.1,0.5-0.1,1-0.1,1.4c0,0.5,0,0.9-0.1,1.3c0,1.6,0.1,2.7,0.1,2.7L246.1,100.8z"/>
                 <path className="sea2" d="M249.3,101.8c0,0,0-0.2-0.1-0.5c-0.1-0.3-0.1-0.9-0.1-1.5c-0.1-1.2,0.1-2.9,0.6-4.4c0.2-0.8,0.4-1.6,0.8-2.3c0.4-0.7,0.8-1.2,1.2-1.7c0.4-0.4,0.8-0.8,1.2-1c0.2-0.1,0.3-0.2,0.4-0.2c0,0,0,0,0,0l0,0c0,0,0,0.1,0.1,0.1c0.1,0,0.1,0,0.1,0l0,0c0,0,0,0,0,0l-0.1-0.2c0,0,0,0,0,0l0,0c0,0,0,0,0.1,0c0.1,0,0.1,0.2,0.1,0.2l0,0c0,0,0,0.1,0,0.1c0,0.1,0,0.3-0.1,0.4c-0.1,0.4-0.2,0.9-0.4,1.4c-0.2,0.6-0.4,1.2-0.7,1.8c-0.3,0.6-0.8,1.2-1.1,1.9c-0.7,1.3-1.2,2.8-1.4,3.9c-0.1,0.6-0.2,1-0.2,1.4c0,0.3,0,0.5,0,0.5L249.3,101.8z"/>
@@ -47,9 +38,5 @@ class App extends React.Component {
             </svg>
             <img className="river" src={river} />
         </div>  
-      </div>
-    );
-  }
+    )}
 }
-
-export default App;

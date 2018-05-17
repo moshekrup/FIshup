@@ -1,8 +1,9 @@
 import * as React from 'react';
-import './fileDetails.css';
 const successFileSvg = require('./assets/success.svg')
 const errorFileSvg = require('./assets/errorUpload.svg');
 const tarImg = require('./assets/books.svg')
+
+import './FileDetails.css';
 
 export interface Props {
     name: string;
@@ -13,7 +14,7 @@ export interface Props {
     error?: string
 };
 
-class FileDetails extends React.Component<Props, Object>{
+class FileDetails extends React.Component<Props>{
     render() {
         const { name, size, progress, isSuccess, isUploading, error = null } = this.props;
         var progressStyle = {

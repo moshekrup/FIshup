@@ -3,6 +3,7 @@ import { ActionFiles, ADD_FILES, UPLOAD_REQUEST,
 import { StoreState, Status } from '../store/';
 import Guid from '../common/guidWrapper';
 
+// TODO change to FileState
 const initState: StoreState = {files: []};
 
 export function Files(state: StoreState = initState, action: ActionFiles): StoreState {
@@ -19,7 +20,7 @@ export function Files(state: StoreState = initState, action: ActionFiles): Store
         case UPLOAD_REQUEST: {
             return {
                 ...state,
-                files: state.files.map(f => { return { ...f, status: Status.Uploding} }) 
+                files: state.files.map(f => { return { ...f, status: Status.Uploading} }) 
             }
         }
         case UPDATE_PROGRESS: {
@@ -54,7 +55,7 @@ export function Files(state: StoreState = initState, action: ActionFiles): Store
                     // transform the one with a matching id
                     { ...f, 
                         error: action.payload.message,
-                        status: Status.failure } : 
+                        status: Status.Failure } : 
                     // otherwise return original todo
                     f
                 ) 

@@ -12,8 +12,8 @@ export interface FileUpload {
 export enum Status {
     Wait = 1,
     Success,
-    failure,
-    Uploding,
+    Failure,
+    Uploading,
 }
 
 export interface StoreState {
