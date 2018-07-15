@@ -10,9 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.0.0-alpha.2",
-    "fisheater2": "0.0.4",
+    "fs-extra": "^6.0.1",
+    "path": "^0.12.7",
     "socket.io": "^1.4.8",
     "tar-fs": "^1.15.3",
-    "tmp": "0.0.31"
+    "tmp": "0.0.31",
+    "util": "^0.10.3"
   }
 }

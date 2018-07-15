@@ -14,13 +14,14 @@ export interface Props {
     error?: string
 };
 
-class FileDetails extends React.Component<Props>{
+class FileDetails extends React.Component<Props> {
     render() {
         const { name, size, progress, isSuccess, isUploading, error = null } = this.props;
-        var progressStyle = {
+        const progressStyle = {
             width: `${progress}%`
         }
-        var baseClasses = "dz-preview dz-file-preview";
+        
+        const baseClasses = "dz-preview dz-file-preview";
         return (
             <div>
                 <div className={baseClasses + (isSuccess ? " dz-success" : error ? " dz-error": "")}>
@@ -53,11 +54,11 @@ class FileDetails extends React.Component<Props>{
                 </div> 
             </div>
         )
-       
     }
 
     formatBytes(bytes: number,decimals: number = 0): string {
-        if(bytes == 0) return '0 Bytes';
+        if(bytes == 0) 
+            return '0 Bytes';
         var k = 1024,
             dm = decimals,
             sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],

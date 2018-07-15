@@ -19,7 +19,7 @@ export interface StoreProps {
 export function mapStateToProps({files}: StoreState): StoreProps {
     return {
         files,
-        uploadReady: files.length !== 0,
+        uploadReady: files.length !== 0, //TODO remove this props, using files.length instead
         isBeginUpload: files.length !== 0 && files[0].status === Status.Uploading
     };
 }

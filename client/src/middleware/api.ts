@@ -1,6 +1,6 @@
 import { serverTypeMsg } from './constants';
 
-function defaultExecute(eventName:string, action: any, emit: any, on: any, next: any, dispatch: any) { // eslint-disable-line no-unused-vars
+function defaultExecute(eventName: string, action: any, emit: any, on: any, next: any, dispatch: any) { // eslint-disable-line no-unused-vars
     // Wire socket.io to dispatch actions sent by the server.
     emit(eventName, action);
     
@@ -53,6 +53,7 @@ export default function createSocketIoMiddleware(socket: any, criteria: any = []
     const emitBound = socket.emit.bind(socket);
     const onBound = socket.on.bind(socket);
     return ({ dispatch }: any) => {
+        // TODO: Get the event name from current action
         return (next: any) => (action: any) => {
             if (evaluate(action, criteria)) {
                 return execute(eventName, action, emitBound, onBound, next, dispatch);

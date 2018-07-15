@@ -13,7 +13,7 @@ export function Files(state: StoreState = initState, action: ActionFiles): Store
                 ...state,
                 files: [...state.files, ...action.payload.map(f => 
                     {
-                        return {guid: new Guid(), file:f,progress:0, status: Status.Wait, error: undefined}
+                        return {guid: new Guid(), file:f, progress:0, status: Status.Wait, error: undefined}
                     }
                 )]
             }
@@ -30,7 +30,7 @@ export function Files(state: StoreState = initState, action: ActionFiles): Store
                     // transform the one with a matching id
                     { ...f, 
                         progress: action.payload.progressPercentage} : 
-                    // otherwise return original todo
+                    // otherwise return original file
                     f
                 ) 
             }
@@ -39,11 +39,9 @@ export function Files(state: StoreState = initState, action: ActionFiles): Store
             return {
                 ...state,
                 files: state.files.map(f => f.guid.toString() === action.payload.guid ?
-                    // transform the one with a matching id
                     { ...f, 
                         progress: 100,
                         status: Status.Success } : 
-                    // otherwise return original todo
                     f
                 ) 
             }
@@ -52,11 +50,9 @@ export function Files(state: StoreState = initState, action: ActionFiles): Store
             return {
                 ...state,
                 files: state.files.map(f => f.guid.toString() === action.payload.guid ?
-                    // transform the one with a matching id
                     { ...f, 
                         error: action.payload.message,
                         status: Status.Failure } : 
-                    // otherwise return original todo
                     f
                 ) 
             }

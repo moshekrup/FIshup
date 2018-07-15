@@ -13,21 +13,21 @@ export type UPLOAD_FAILED = typeof UPLOAD_FAILED;
 export const UPDATE_PROGRESS = 'UPDATE_PROGRESS';
 export type UPDATE_PROGRESS = typeof UPDATE_PROGRESS;
 
-export type ActionFiles = AddFiles | UplaodFiles | UploadFileFinished | UploadFileFailed | UpdateProgressFile;
+export type ActionFiles = AddFiles | UploadFiles | UploadFileFinished | UploadFileFailed | UpdateProgressFile;
 
 export interface UploadFileFinished {
-    type: UPLOAD_FINISHED,
-    payload: { guid: string }
+    type: UPLOAD_FINISHED;
+    payload: { guid: string };
 }
 
 export interface UploadFileFailed {
-    type: UPLOAD_FAILED,
-    payload: { guid: string, message: string }
+    type: UPLOAD_FAILED;
+    payload: { guid: string, message: string };
 }
 
-export interface UpdateProgressFile{
-    type: UPDATE_PROGRESS,
-    payload: { guid: string, progressPercentage: number, message: string }
+export interface UpdateProgressFile {
+    type: UPDATE_PROGRESS;
+    payload: { guid: string, progressPercentage: number, message: string };
 }
 
 export interface AddFiles {
@@ -35,10 +35,10 @@ export interface AddFiles {
     payload: File[];
 }
 
-export interface UplaodFiles {
-    type: UPLOAD_REQUEST, 
+export interface UploadFiles {
+    type: UPLOAD_REQUEST;
     returnTypes: StatusUploadedFile[];
-    payload: { guid: string, file: File } []
+    payload: { guid: string, file: File } [];
 }
 
 export type StatusUploadedFile = UPLOAD_FINISHED | UPLOAD_FAILED | UPDATE_PROGRESS;
@@ -51,7 +51,7 @@ export function addFiles(files: File[]): AddFiles {
     )
 }
 
-export function uploadFiles(files: FileUpload[]): UplaodFiles {
+export function uploadFiles(files: FileUpload[]): UploadFiles {
     return({
             type: UPLOAD_REQUEST,
             returnTypes: [UPLOAD_FINISHED, UPLOAD_FAILED, UPDATE_PROGRESS],
